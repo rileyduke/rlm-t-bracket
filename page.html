@@ -5,12 +5,14 @@
         <meta content="utf-8" http-equiv="encoding">
     </head>
     <body ng-app="tbracket">
-    
+        
         <div ng-controller="tb-controller">
-          <t-bracket />
+            <button ng-click="addPlayer('test','testd')">Change Data</button>
+            <t-bracket />
         </div>
 
         <script type="text/javascript" src="scripts/angular.min.js"></script>
-        <script type="text/javascript" src="tbracket/app.directive.js"></script>
+        <script type="text/javascript" src="tbracket/directive.js"></script>
+        <script type="text/javascript" src="tbracket/controller.js"></script>
     </body>
 </html>
