@@ -1,27 +1,19 @@
 tbracketApp.controller('tb-controller', ['$scope', function($scope) {
-  
+
   var counter = 0;
 
   $scope.players = [
     {
-      display: 'img1.png',
-      name: 'Pic 1'
+      display: 'Peno',
+      name: 'Riley Duke'
     }, 
     {
-      display: 'img2.jpg',
-      name: 'Pic 2'
+      display: 'Taylawlz',
+      name: 'Taylor Hanson'
     }, 
     {
-      display: 'img3.jpg',
-      name: 'Pic 3'
-    }, 
-    {
-      display: 'img4.png',
-      name: 'Pic 4'
-    }, 
-    {
-      display: 'img5.png',
-      name: 'Pic 5'
+      display: 'Spinkster',
+      name: 'Spaniard Feo'
     }
   ];
 
