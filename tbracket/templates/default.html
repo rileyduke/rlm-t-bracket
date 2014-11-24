@@ -1,5 +1,11 @@
+<br />
+{{tournamentSize}}
 <ul>
-	<li ng-repeat="player in players">
-		Display Name: {{player.display}}, Name: {{player.name}}
+	<li ng-repeat="round in rounds">
+		<ul>
+			<li ng-repeat="match in round.matches">
+				Round: {{match.round}}, Match: {{match.match}}
+			</li>
+		</ul>
 	</li>
 </ul>
