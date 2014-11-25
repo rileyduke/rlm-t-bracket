@@ -4,7 +4,12 @@
 	<li ng-repeat="round in rounds">
 		<ul>
 			<li ng-repeat="match in round.matches">
-				Round: {{match.round}}, Match: {{match.match}}
+				Round: {{match.round}}, Match: {{match.match}}, Next Match #: {{match.nextMatch}}
+				<ul>
+					<li ng-repeat="player in match.matchPlayers">
+						Player: {{player.display}}
+					</li>
+				</ul>
 			</li>
 		</ul>
 	</li>

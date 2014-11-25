@@ -1,7 +1,7 @@
 # of players = p
 # of matches (round 1) = 1/2 * 2^ceiling(log2(p)) = Math.pow(2,Math.ceil(Math.log2(p)))/2 = m
 
-players = [player1,player2,...]
+players = [1player1,player2,...]
 rounds = [round1,round2,...]
 game = 	game.opponent1
 		game.opponent2
@@ -12,3 +12,5 @@ round = [game1,game2,...]
 
 
 TODO - lookup angular factories
+
+kagany vaweerdy

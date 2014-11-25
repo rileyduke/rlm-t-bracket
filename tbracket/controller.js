@@ -47,7 +47,7 @@ tbracketApp.controller('tb-controller', ['$scope', function($scope) {
   $scope.calculateTournamentSize = function(){
     $scope.roundCount = Math.ceil(Math.log2(playerCount));
     $scope.tournamentSize = Math.pow(2,$scope.roundCount);
-    console.log($scope.tournamentSize);
+    //console.log($scope.tournamentSize);
   }
 
   //create a list of rounds
@@ -72,7 +72,9 @@ tbracketApp.controller('tb-controller', ['$scope', function($scope) {
       for (var i = 0; i < element.roundMatchCount; i++) {
         element.matches.push({
           round: element.roundNumber,
-          match: i+1
+          match: i+1,
+          nextMatch: Math.round((i+1)/2),
+          matchPlayers: []
         });
       };
     });
@@ -84,11 +86,43 @@ tbracketApp.controller('tb-controller', ['$scope', function($scope) {
     // });
   }
 
+  //place all players into their matches for round 1
+  //randomize player list then put them in their place
+  $scope.seedPlayers = function(){
+    randomizedPlayers = shuffle($scope.players);
+    randomizedPlayers.forEach(function(player,i,array){
+      $scope.rounds[0].matches[Math.round((i-1)/2)].matchPlayers.push({display:player.name});
+    });
+  }
+
   //do all the necessary stuff to start the tournament
   $scope.initTournament = function(){
     $scope.calculateTournamentSize();
     $scope.initRounds();
     $scope.initMatches();
+    $scope.seedPlayers();
   }
 
 }]);
+
+//Fisher-Yates Shuffle
+//(not mine)
+function shuffle(array) {
+    var counter = array.length, temp, index;
+
+    // While there are elements in the array
+    while (counter > 0) {
+        // Pick a random index
+        index = Math.floor(Math.random() * counter);
+
+        // Decrease counter by 1
+        counter--;
+
+        // And swap the last element with it
+        temp = array[counter];
+        array[counter] = array[index];
+        array[index] = temp;
+    }
+
+    return array;
+}
