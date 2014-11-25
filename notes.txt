@@ -14,3 +14,12 @@ round = [game1,game2,...]
 TODO - lookup angular factories
 
 kagany vaweerdy
+
+
+Plugin Feature Requests:
+-put people far apart from each other
+-match scores
+-top 8 lock
+
+Our Site Feature Requests:
+-track players based on ID
