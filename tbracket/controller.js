@@ -19,7 +19,7 @@ tbracketApp.controller('tb-controller', ['$scope', function($scope) {
     }
   ];
 
-  //start with 0 players
+  //start with length of player array players
   var playerCount = $scope.players.length;
 
   //adds player to the players list
@@ -93,6 +93,12 @@ tbracketApp.controller('tb-controller', ['$scope', function($scope) {
     randomizedPlayers.forEach(function(player,i,array){
       $scope.rounds[0].matches[Math.round((i-1)/2)].matchPlayers.push({display:player.name});
     });
+  }
+
+  //promote a player to the next round
+  $scope.promotePlayer = function(player,match,round){
+    //needs some error checking
+    $scope.rounds[round.roundNumber-1+1].matches[match.nextMatch-1].matchPlayers.push(player);
   }
 
   //do all the necessary stuff to start the tournament

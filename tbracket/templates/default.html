@@ -6,7 +6,7 @@
 			<li ng-repeat="match in round.matches">
 				Round: {{match.round}}, Match: {{match.match}}, Next Match #: {{match.nextMatch}}
 				<ul>
-					<li ng-repeat="player in match.matchPlayers">
+					<li ng-repeat="player in match.matchPlayers" ng-click="promotePlayer(player,match,round)">
 						Player: {{player.display}}
 					</li>
 				</ul>
