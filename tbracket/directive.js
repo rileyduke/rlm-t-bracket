@@ -8,4 +8,9 @@ tbracketApp.directive('tBracket', function() {
 			}
 		};
 	}
-);
+).factory('$exceptionHandler', function() {
+  return function(exception, cause) {
+    exception.message += ' (caused by "' + cause + '")';
+    throw exception;
+  };
+});

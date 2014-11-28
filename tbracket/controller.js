@@ -74,7 +74,8 @@ tbracketApp.controller('tb-controller', ['$scope', function($scope) {
           round: element.roundNumber,
           match: i+1,
           nextMatch: Math.round((i+1)/2),
-          matchPlayers: []
+          matchPlayers: [],
+          isCompleted:false
         });
       };
     });
@@ -97,8 +98,10 @@ tbracketApp.controller('tb-controller', ['$scope', function($scope) {
 
   //promote a player to the next round
   $scope.promotePlayer = function(player,match,round){
-    //needs some error checking
-    $scope.rounds[round.roundNumber-1+1].matches[match.nextMatch-1].matchPlayers.push(player);
+    if(!$scope.rounds[round.roundNumber-1].matches[match.match-1].isCompleted){
+      $scope.rounds[round.roundNumber-1+1].matches[match.nextMatch-1].matchPlayers.push(player);
+      $scope.rounds[round.roundNumber-1].matches[match.match-1].isCompleted = true;
+    }
   }
 
   //do all the necessary stuff to start the tournament

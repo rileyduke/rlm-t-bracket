@@ -9,16 +9,16 @@ game = 	game.opponent1
 		game.loser
 round = [game1,game2,...]
 
-TODO - lookup angular factories
-
-kagany vaweerdy
+TODO - lookup angular factorie
 
 Plugin Feature Requests:
 -put people far apart from each other
 	-clan entry
 -match scores
 -top 8 lock
-select the person who has a by
+-select the person who has a by
+-smart seeding -> have some hype value to keep the hype matches in the finals
+-pools (how does this work)
 
 Our Site Feature Requests:
 -track players based on ID
