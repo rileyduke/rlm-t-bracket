@@ -1,4 +1,4 @@
-tbracketApp.controller('tb-controller', ['$scope', function($scope) {
+tbracketApp.controller('tb-controller', ['$scope','staticFactory', function($scope,staticFactory) {
   $scope.tabs = [
     { title:'Dynamic Title 1', content:'Dynamic content 1' },
     { title:'Dynamic Title 2', content:'Dynamic content 2', disabled: true }
@@ -13,20 +13,13 @@ tbracketApp.controller('tb-controller', ['$scope', function($scope) {
   $scope.rounds = [];
   $scope.tournamentSize = 0;
   $scope.roundCount = 0;
-  $scope.players = [
-    {
-      display: 'Peno',
-      name: 'Riley Duke'
-    }, 
-    {
-      display: 'Taylawlz',
-      name: 'Taylor Hanson'
-    }, 
-    {
-      display: 'Spinkster',
-      name: 'Spaniard Feo'
-    }
-  ];
+  $scope.players = [];
+
+  init();
+
+  function init(){
+    $scope.players = staticFactory.getPlayers();
+  }
 
   //start with length of player array players
   var playerCount = $scope.players.length;
