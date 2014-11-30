@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="scripts/site.css">
+    </head>
+    <body ng-app="tbracket">
+        <div class="wrap">
+            <ul class="menu">
+                <li><h2>DRF</h2></li>
+                <li><a href="#/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li><a href="#/tournament"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Tournament</a></li>
+                <li><a href="#/players"><span class="glyphicon glyphicon-user"></span> Players</a></li>
+            </ul>
+            <div class="contents">
+                <div ng-view></div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="scripts/angular.min.js"></script>
+        <script type="text/javascript" src="scripts/angular-route.min.js"></script>
+        <script type="text/javascript" src="scripts/ui-bootstrap.min.js"></script>
+        <script type="text/javascript" src="tbracket/directive.js"></script>
+        <script type="text/javascript" src="tbracket/controller.js"></script>
+    </body>
+</html>

@@ -1,4 +1,4 @@
-var tbracketApp = angular.module('tbracket', []);
+var tbracketApp = angular.module('tbracket', ['ui.bootstrap','ngRoute']);
 	
 tbracketApp.directive('tBracket', function() {
 	return {
@@ -8,9 +8,23 @@ tbracketApp.directive('tBracket', function() {
 			}
 		};
 	}
-).factory('$exceptionHandler', function() {
-  return function(exception, cause) {
-    exception.message += ' (caused by "' + cause + '")';
-    throw exception;
-  };
+);
+tbracketApp.config(function ($routeProvider){
+  $routeProvider
+    .when('/',
+    {
+      controller:'tb-controller',
+      templateUrl: 'tbracket/templates/test.html'
+    })
+    .when('/players',
+    {
+      controller: 'tb-controller',
+      templateUrl: 'tbracket/templates/players.html'
+    })
+    .when('/tournament',
+    {
+      controller: 'tb-controller',
+      templateUrl: 'tbracket/templates/default.html'
+    })
+    .otherwise({ redirectTo: '/'});
 });
