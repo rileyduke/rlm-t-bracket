@@ -24,31 +24,20 @@ ul{list-style: none; padding:0px;}
 	height:100%;
 }
 .contents{background-color:white; border-radius:15px; padding:20px;}
-.menu{background-color:white;}
+.menu{background-color: #2C3E50;}
 @media screen and (min-width: 991px) {
 	.menu{
 		max-width: 300px;
-		padding:25px;
-		/*border-right:1px solid black;*/
 		height:100%;
-		position:absolute;
+		position:fixed;
 	}
 	.contents{margin-left:200px;}
 }
 @media screen and (max-width: 990px) {
 	.menu{
-		/*max-width: 50px;*/
-		/*border-right:1px solid black;*/
 		min-height:50px;
 		width:100%;
-		/*border-bottom:1px solid black;*/
 	}
-	.menu-list li{
-		/*display: inline;
-		list-style-type: none;*/
-		padding-right: 20px;
-	}
-	/*.contents{padding-top:50px;}*/
 }
 
 .menu a{
@@ -58,12 +47,15 @@ ul{list-style: none; padding:0px;}
 	text-decoration: none;
 	
 }
-.menu li{
-	padding-left:2px;
-	padding-right: 15px;
+.active{
+	background-color: #FC4349;
+	color:white;
 }
 /*.menu li:hover{background-color:#2A2C2B;}*/
-.menu li a:active{color:#DC3522;}
+.menu li a{color:white;}
+.sub-menu-item{
+	background-color:#314559!important;
+	padding-left:25px;
+	padding-right:25px;
+}
 .contents{padding:55px;padding-top:30px;}
-
-.mosaicflow__column { float:left; } .mosaicflow__item img { display:block; width:100%; height:auto; }

@@ -1,10 +1,5 @@
 <div ng-controller="tb-controller">
-    Display: <input type="text" ng-model="inputDisplay" />
-    Name: <input type="text" ng-model="inputName" />
-    <button ng-click="addPlayer(inputName,inputDisplay)" class="btn btn-primary">Add Player</button>
-    <button ng-click="initTournament()" class="btn btn-primary">Run Tournament</button>
-        <br />
-	{{tournamentSize}}
+	<button ng-click="initTournament()" class="btn btn-primary">Run Tournament</button>
 	<ul>
 		<li ng-repeat="round in rounds">
 			<ul>

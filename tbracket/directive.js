@@ -14,7 +14,7 @@ tbracketApp.config(function ($routeProvider){
     .when('/',
     {
       controller:'tb-controller',
-      templateUrl: 'tbracket/templates/test.html'
+      templateUrl: 'tbracket/templates/home.html'
     })
     .when('/players',
     {

@@ -1,3 +1,9 @@
+Display: <input type="text" ng-model="inputDisplay" />
+Name: <input type="text" ng-model="inputName" />
+<button ng-click="addPlayer(inputName,inputDisplay)" class="btn btn-primary">Add Player</button>
+
+    <br />
+{{tournamentSize}}
 <ul>
 	<li ng-repeat="player in players">
 		{{player.name}}
