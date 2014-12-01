@@ -1,4 +1,4 @@
-var tbracketApp = angular.module('tbracket', ['ui.bootstrap','ngRoute']);
+var tbracketApp = angular.module('tbracket', ['ui.bootstrap','ngRoute','ui.sortable']);
 	
 tbracketApp.directive('tBracket', function() {
 	return {

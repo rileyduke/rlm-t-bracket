@@ -1,4 +1,10 @@
 tbracketApp.controller('tb-controller', ['$scope','staticFactory', function($scope,staticFactory) {
+  $scope.dragControlListeners = {
+    accept: function (sourceItemHandleScope, destSortableScope) {return boolean},
+    itemMoved: function (event) {alert('test')},
+    orderChanged: function(event) {},
+    containment: '#board'
+  };
   //see notes for variables
   $scope.rounds = [];
   $scope.tournamentSize = 0;
@@ -15,16 +21,18 @@ tbracketApp.controller('tb-controller', ['$scope','staticFactory', function($sco
   var playerCount = $scope.players.length;
 
   //adds player to the players list
-  $scope.addPlayer = function(name,display){
+  $scope.addPlayer = function(name,display,seedvalue){
     playerCount++;
     $scope.players.push({
       name: (name) ? name : 'New Player ' + playerCount,
-      display: (display) ? display : 'New Display ' + playerCount
+      display: (display) ? display : 'New Display ' + playerCount,
+      seedValue: (seedvalue) ? seedvalue : 1
     });
     
     //reset global binds
     $scope.inputDisplay = '';
     $scope.inputName = '';
+    $scope.seedValue = '';
 
     //log test
     // $scope.players.forEach(function(element,index,array){
